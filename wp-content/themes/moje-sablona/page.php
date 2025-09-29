@@ -22,7 +22,7 @@
             ?>
         </main>
 
-        <?php
+        <?phpz
             get_footer();
         ?>
     </body>
