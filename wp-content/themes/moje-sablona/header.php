@@ -6,10 +6,14 @@
     <title><?php bloginfo('name'); ?> | <?php wp_title(); ?></title>
 
     <!-- Správné načtení style.css -->
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/wordpress/wp-content/themes/moje-sablona/style.css">
+
+    <script src="<?php echo get_template_directory_uri(); ?>/js/script.js" defer></script>
+    
 
     <!-- Správné načtení script.js se zpožděním -->
     <img src="<?php echo get_template_directory_uri(); ?>/img/moje-logo.jpg" alt="Logo">
+    
 
     <?php wp_head(); ?>
 </head>
