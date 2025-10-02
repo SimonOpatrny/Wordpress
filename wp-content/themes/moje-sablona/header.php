@@ -3,55 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php bloginfo('name'); ?> | <?php wp_title(); ?></title>
 
-    <link rel="stylesheet" href="/wp-content/themes/moje-sablona/style.css">
-    <!-- Musíte pro script.js nastavit defer, díky tomu se kód čte až na konci. Díky tomu funguje querry selektory v js -->
-    <script src="/script/script.js" defer></script>
+    <!-- Správné načtení style.css -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/wordpress/wp-content/themes/moje-sablona/style.css">
+
+    <script src="<?php echo get_template_directory_uri(); ?>/js/script.js" defer></script>
+    
+
+    <!-- Správné načtení script.js se zpožděním -->
+    <img src="<?php echo get_template_directory_uri(); ?>/img/moje-logo.jpg" alt="Logo">
+    
+
+    <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
     <header>
-        <!-- Wrapper dáváme kvůli tomu, aby na velkých monitorech nebyl header moc roztáhlý
-             Obecně se bere maximální šířka cca 1300px
-        -->
         <div class="wrapper">
-            <!-- 
-                Zde je lepší si všechny sekce dát na itemy v divech, aby se dobře s nima dělalo přes display flex
-                Využívejte přehlednost v kódu pomocí class, pište první rodiče a pak potomka, přes stylus/SCSS můžeme vnořovat lépe selektory a kód je čistější
-             -->
             <div class="wrapper-logo">
-                <img src="/img/availability-svgrepo-com.svg" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/availability-svgrepo-com.svg" alt="">
             </div>
-            <!--
-                Zde vytváříme ikonu hamburgeru, který je rozanimovaný
-                Je lepší si udělat čárky pomocí spanu, protože se pak dobře mohou rozanimovat
-                Nechme spany prázný, protože grafikcou podobu jím dáváme pomocí css
-            -->
+
             <div class="wrapper-hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-        <!-- 
-            Jedíný nav je mimo wrapper, důvod je takový, aby se na mobilním zařízení schovával pod wrapper.
-            Pokud bychom to chtěli pod header, aby se schovával, je to těžší varianta, má konflikt s headrem, pokud je nav jako absolute
-            Na PC verze se pak mění z-index a přizpůsobuje se na prostředek a itemy v navu pak ovládáme pomocí displey flexu
-         -->            
+
         <nav>
-            <!--
-                # Je prázdný odkaz, bude nás odkazovat na jednu na stejnou stránku
-            -->
             <a href="#">Home page</a>
             <a href="#">Login</a>
             <a href="#">Register</a>
         </nav>
     </header>
+
     <main>
-
-    </main>
-    <footer>
-
-    </footer>
-</body>
-</html>
