@@ -5,16 +5,12 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-         <script src="<?= $theme_url?>/script/script.js" defer></script>
-         <link rel="stylesheet" href="<?php $theme_url ?>/style.css">
-         <link rel="stylesheet" href="<?php $theme_url ?>/style/footer.css">
+
          <?php wp_head(); ?>
     </head>
     <body>
-        <?php
-            echo  $theme_url. "/script/script.js"; // Výpis cesty k šabloně pro kontrolu
-            get_header();
-        ?>
+
+
 
         <main id="primary" class="site-main">
             <?php
